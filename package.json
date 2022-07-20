@@ -8,7 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
+    "quasar": "^2.0.0",
+    "sass-loader": "^10.1.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -18,7 +21,10 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "postcss-rtl": "^3.5.3",
+    "sass": "1.32.12",
+    "vue-cli-plugin-quasar": "~5.0.1"
   },
   "eslintConfig": {
     "root": true,

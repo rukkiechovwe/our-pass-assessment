@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <q-layout view="lHh Lpr lFf" class="">
+    <q-page-container>
+      <HelloWorld />
+    </q-page-container>
+  </q-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from "vue";
+
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "LayoutDefault",
 
+  components: {
+    HelloWorld,
+  },
+
+  setup() {
+    return {
+      leftDrawerOpen: ref(false),
+    };
+  },
+};
+</script>
 <style>
+p {
+  margin: 7px 0 !important;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: #fafafa;
+}
+.border {
+  border-radius: 20px;
+}
+.divider {
+  border-bottom: 2px solid #f6f4ff;
 }
 </style>
