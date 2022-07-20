@@ -6,12 +6,12 @@ $secondary : #f6f4ff;
 $accent    : #9C27B0;
 $bg        : #fafafa;
 $white     : #ffffff;
-$grey:#9a9ea1;
+$grey      : #9a9ea1;
 $dark      : #1D1D1D;
 
 $positive  : #21BA45;
 $negative  : #C10015;
-$info      : #31CCEC;
+$info      : rgb(51, 126, 252);
 $warning   : #F2C037;
 
 @import '~quasar-variables-styl'

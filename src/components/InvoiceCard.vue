@@ -1,9 +1,15 @@
 <template>
   <div>
     <div class="row justify-between text-grey q-mb-lg">
-      <div>
-        <p class="text-weight-bold text-body1 text-dark">Dippa Inhouse</p>
-        <p class="">hello@dippainhouse.com</p>
+      <div class="row items-center">
+        <div
+          style="height: 50px; width: 50px; border-radius: 50%"
+          class="bg-info q-mr-md"
+        ></div>
+        <div>
+          <p class="text-weight-bold text-body1 text-dark">Dippa Inhouse</p>
+          <p class="">hello@dippainhouse.com</p>
+        </div>
       </div>
       <div class="text-right">
         <p>Ijen Bouelovard Street 101</p>
