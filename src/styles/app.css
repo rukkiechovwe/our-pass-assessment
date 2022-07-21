@@ -21,7 +21,45 @@
 body {
   font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+p {
+  margin: 7px 0 !important;
+}
+#app {
+  background: #fafafa;
+}
+.border {
+  border-radius: 20px;
+}
+.divider {
+  border-bottom: 2px solid #f6f4ff;
+}
 .section {
-  max-width: 990px;
+  max-width: 1024px;
   margin: 0 auto;
+}
+.width-half {
+  width: 85%;
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 668px) {
+ 
+}
+@media screen and (max-width: 600px) {
+  .text-right {
+    text-align: left;
+  }
+  .row-sm {
+    flex-direction: column;
+  }
+  .row-sm > div:last-child {
+    margin-top: 1rem;
+  }
+   .width-half {
+    width: 100%;
+  }
 }

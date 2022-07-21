@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <q-toolbar class="text-dark q-px-xl section">
+    <q-toolbar class="text-dark q-px-lg section" :dense="$q.screen.lt.md">
       <p class="text-h6 text-weight-bold text-primary q-pr-xl">Paypay.</p>
 
       <q-tabs v-model="tab" shrink stretch inline-label>
