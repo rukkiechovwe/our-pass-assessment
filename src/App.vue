@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+
 import NavBar from "./components/NavBar.vue";
 import PaymentMethod from "./components/PaymentMethod.vue";
 import InvoiceCard from "./components/InvoiceCard.vue";
@@ -35,6 +36,14 @@ export default {
   },
 
   setup() {
+    let state = reactive({ invoice: {} });
+    fetch("/api/invoice")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        state.invoice = json;
+        console.log(state.invoice);
+      });
     return {
       leftDrawerOpen: ref(false),
     };
