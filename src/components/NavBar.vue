@@ -2,7 +2,6 @@
   <div class="bg-white">
     <q-toolbar class="text-dark q-px-lg section" :dense="$q.screen.lt.md">
       <p class="text-h6 text-weight-bold text-primary q-pr-xl">Paypay.</p>
-
       <q-tabs v-model="tab" shrink stretch inline-label>
         <q-tab name="tab1" label="Dashboard" icon="grid_view" />
         <q-tab name="tab2" label="Invoices" icon="description" />

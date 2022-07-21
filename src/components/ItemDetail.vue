@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <div class="row items-center justify-between divider q-pb-sm">
+  <div
+    style="overflow-x: auto; width: 100%; white-space: nowrap; display: block"
+    class="horizontal-scroll"
+  >
+    <div
+      class="row items-center justify-between divider q-pb-sm"
+      style="min-width: 370px"
+    >
       <div>
         <p class="text-weight-bold text-subtitle1">Item Detail</p>
         <p class="text-grey">Type Item for Hours item</p>
@@ -16,20 +22,24 @@
     </div>
     <div
       class="row items-center justify-between divider q-mb-lg q-px-xs text-grey"
+      style="min-width: 600px"
     >
-      <p style="width: calc(100% - 480px)">Item name</p>
+      <p style="width: calc(100% - 480px); min-width: 150px">Item name</p>
       <p style="width: 50px">Hours</p>
       <p style="width: 100px">Rate/Hr</p>
       <p style="width: 100px">Tax</p>
-      <p style="width: 140px">Line Total</p>
+      <p style="width: 130px">Line Total</p>
       <p style="width: 30px"></p>
     </div>
-    <div class="row items-center justify-between divider q-pb-lg">
+    <div
+      class="row items-center justify-between divider q-pb-lg"
+      style="min-width: 600px"
+    >
       <q-input
         outlined
         v-model="invoice.item.name"
         dense
-        style="width: calc(100% - 480px); min-width: 200px"
+        style="width: calc(100% - 480px); min-width: 150px"
         class="col-sm-8"
       />
       <q-input
@@ -64,7 +74,7 @@
         v-model="invoice.item.total"
         dense
         placeholder="0.00"
-        style="width: 140px"
+        style="width: 130px"
       >
         <template v-slot:prepend>
           <q-icon name="attach_money" />
@@ -75,7 +85,6 @@
     </div>
   </div>
 </template>
-<script></script>
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";

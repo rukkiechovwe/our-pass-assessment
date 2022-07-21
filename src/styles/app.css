@@ -40,14 +40,33 @@ p {
 .width-half {
   width: 85%;
 }
+
+/* scrollbar */
+.horizontal-scroll::-webkit-scrollbar,
+.horizontal-scroll::-moz-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.horizontal-scroll::-webkit-scrollbar-track,
+.horizontal-scroll::-moz-scrollbar-track {
+  background-color: #c2d2e400;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb,
+.horizontal-scroll::-moz-scrollbar-thumb {
+  background-color: #e6e6e6;
+}
+.horizontal-scroll {
+  scrollbar-color: #e6e6e6 #c2d2e400;
+  scrollbar-width: thin;
+}
+
+/* responsiveness */
 @media screen and (min-width: 1200px) {
   .section {
     max-width: 1200px;
     margin: 0 auto;
   }
-}
-@media screen and (max-width: 668px) {
- 
 }
 @media screen and (max-width: 600px) {
   .text-right {
@@ -59,7 +78,7 @@ p {
   .row-sm > div:last-child {
     margin-top: 1rem;
   }
-   .width-half {
+  .width-half {
     width: 100%;
   }
 }
