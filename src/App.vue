@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 import NavBar from "./components/NavBar.vue";
 import PaymentMethod from "./components/PaymentMethod.vue";
@@ -40,7 +40,6 @@ export default {
     store.dispatch("getInvoice");
 
     return {
-      leftDrawerOpen: ref(false),
       invoice: computed(() => store.state.invoice),
     };
   },

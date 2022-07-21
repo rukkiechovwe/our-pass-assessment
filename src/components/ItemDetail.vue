@@ -22,7 +22,7 @@
       <p style="width: 100px">Rate/Hr</p>
       <p style="width: 100px">Tax</p>
       <p style="width: 140px">Line Total</p>
-     
+      <p style="width: 30px"></p>
     </div>
     <div class="row items-center justify-between divider q-pb-lg">
       <q-input
@@ -30,8 +30,14 @@
         v-model="invoice.item.name"
         dense
         style="width: calc(100% - 480px); min-width: 200px"
+        class="col-sm-8"
       />
-      <q-input outlined v-model="invoice.item.hours" dense style="width: 50px" />
+      <q-input
+        outlined
+        v-model="invoice.item.hours"
+        dense
+        style="width: 50px"
+      />
       <q-input
         outlined
         v-model="invoice.item.rate"
@@ -79,7 +85,6 @@ export default {
 
   setup() {
     const store = useStore();
-    store.dispatch("getInvoice");
     return {
       invoice: computed(() => store.state.invoice),
     };

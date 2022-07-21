@@ -52,7 +52,6 @@ export default {
 
   setup() {
     const store = useStore();
-    store.dispatch("getInvoice");
 
     return {
       invoice: computed(() => store.state.invoice),
