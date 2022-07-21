@@ -7,14 +7,16 @@
           class="bg-info q-mr-md"
         ></div>
         <div>
-          <p class="text-weight-bold text-body1 text-dark">Dippa Inhouse</p>
-          <p class="">hello@dippainhouse.com</p>
+          <p class="text-weight-bold text-body1 text-dark">
+            {{ invoice.name }}
+          </p>
+          <p class="">{{ invoice.email }}</p>
         </div>
       </div>
       <div class="text-right">
-        <p>Ijen Bouelovard Street 101</p>
-        <p>Malang City, 65115</p>
-        <p>East Java, Indonesia</p>
+        <p>{{ invoice.address.street_name }}</p>
+        <p>{{ invoice.address.city }}, {{ invoice.address.postal_code }}</p>
+        <p>{{ invoice.address.state }}, {{ invoice.address.country }}</p>
       </div>
     </div>
     <div
@@ -22,22 +24,39 @@
     >
       <div>
         <p class="text-weight-bold">Invoice Number</p>
-        <p class="text-weight-bold">INV-2022-010</p>
+        <p class="text-weight-bold">{{ invoice.invoice_number }}</p>
         <p>
           <span class="q-pr-sm">Issue Date:</span>
-          <span class="text-weight-bold">11 Jan 2022</span>
+          <span class="text-weight-bold">{{ invoice.issue_date }}</span>
         </p>
         <p>
           <span class="q-pr-sm">Due Date:</span>
-          <span class="text-weight-bold">18 Jan 2022</span>
+          <span class="text-weight-bold">{{ invoice.due_date }}</span>
         </p>
       </div>
       <div class="text-right">
         <p class="text-weight-bold">Billed To</p>
-        <p>Zacky Grizzly</p>
-        <p>Moonlight Agency LTD</p>
-        <p>New York, USA</p>
+        <p>{{ invoice.billed_to.name }}</p>
+        <p>{{ invoice.billed_to.address }}</p>
+        <p>{{ invoice.billed_to.state }}, {{ invoice.billed_to.country }}</p>
       </div>
     </div>
   </div>
 </template>
+<script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+export default {
+  name: "InvoiceCard",
+
+  setup() {
+    const store = useStore();
+    store.dispatch("getInvoice");
+
+    return {
+      invoice: computed(() => store.state.invoice),
+    };
+  },
+};
+</script>

@@ -34,6 +34,11 @@ export function makeServer({ environment = "development" } = {}) {
             tax: "",
             total: "4,800.00",
           },
+          payment: {
+            account_name: "Barley Vallendito",
+            account_number: "9700 7867 7665 7686",
+            routing_number: "0123456789",
+          },
           subTotal: "4,800.00",
           discount: "0.00",
           tax: "0.00",

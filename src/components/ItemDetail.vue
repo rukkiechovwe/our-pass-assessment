@@ -14,24 +14,27 @@
         unelevated
       />
     </div>
-    <div class="row items-center justify-between divider q-mb-lg q-px-xs text-grey">
-      <p style="width: calc(100% - 550px)">Item name</p>
+    <div
+      class="row items-center justify-between divider q-mb-lg q-px-xs text-grey"
+    >
+      <p style="width: calc(100% - 480px)">Item name</p>
       <p style="width: 50px">Hours</p>
       <p style="width: 100px">Rate/Hr</p>
       <p style="width: 100px">Tax</p>
-      <p style="width: 150px">Line Total</p>
+      <p style="width: 140px">Line Total</p>
+     
     </div>
     <div class="row items-center justify-between divider q-pb-lg">
       <q-input
         outlined
-        v-model="text"
+        v-model="invoice.item.name"
         dense
-        style="width: calc(100% - 550px); min-width: 200px"
+        style="width: calc(100% - 480px); min-width: 200px"
       />
-      <q-input outlined v-model="hours" dense style="width: 50px" />
+      <q-input outlined v-model="invoice.item.hours" dense style="width: 50px" />
       <q-input
         outlined
-        v-model="rate"
+        v-model="invoice.item.rate"
         dense
         placeholder="0.00"
         style="width: 100px"
@@ -42,7 +45,7 @@
       </q-input>
       <q-input
         outlined
-        v-model="total"
+        v-model="invoice.item.tax"
         dense
         placeholder="0.00"
         style="width: 100px"
@@ -52,10 +55,10 @@
         </template> </q-input
       ><q-input
         outlined
-        v-model="lineTotal"
+        v-model="invoice.item.total"
         dense
         placeholder="0.00"
-        style="width: 150px"
+        style="width: 140px"
       >
         <template v-slot:prepend>
           <q-icon name="attach_money" />
@@ -66,17 +69,19 @@
     </div>
   </div>
 </template>
+<script></script>
 <script>
-import { ref } from "vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
+  name: "ItemDetail",
+
   setup() {
+    const store = useStore();
+    store.dispatch("getInvoice");
     return {
-      text: ref("Payment Project - Moonlight Mobile Design"),
-      hours: ref("120"),
-      rate: ref("40.00"),
-      total: ref(""),
-      lineTotal: ref("4,800.00"),
+      invoice: computed(() => store.state.invoice),
     };
   },
 };
