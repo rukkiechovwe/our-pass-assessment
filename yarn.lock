@@ -6906,10 +6906,10 @@ postcss-reduce-transforms@^4.0.2:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-rtl@^3.5.3:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/postcss-rtl/-/postcss-rtl-1.7.2.tgz#69f8574aa3f9f29449b3145bd023b74d497a1c96"
-  integrity sha512-QX1u+gMJnxScBcU5rmJBHHHdWZwD6manK5FK3+bA2MGHP+6CHKHGP9rF4a3KI2+Mgs0Vd/IoLTdmfrSZEDUA+Q==
+postcss-rtl@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/postcss-rtl/-/postcss-rtl-1.7.3.tgz#5019bf2826e90972fba8ad061c7f80d43c817bfb"
+  integrity sha512-PMwlrQSeZKChNJQGtWz9Xfk3rY1W7P5Jp4sFRXVufczQIH6vRhTNSc5gnEwKHaWrU8SMoZMi2VY7ihOmwVvW7g==
   dependencies:
     rtlcss "2.5.0"
 
