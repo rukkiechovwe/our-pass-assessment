@@ -1,6 +1,6 @@
 # our-pass
 
-## Project link
+### Project link
 [Click here to preview the project](https://our-pass-assessment.netlify.app/).
 
 ## Project setup
