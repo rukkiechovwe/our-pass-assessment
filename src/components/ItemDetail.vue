@@ -95,7 +95,19 @@ export default {
   setup() {
     const store = useStore();
     return {
-      invoice: computed(() => store.state.invoice),
+      invoice: computed(() =>
+        store.state.invoice
+          ? store.state.invoice
+          : {
+              item: {
+                name: "Payment Project - Moonlight Mobile Design",
+                hours: "120",
+                rate: "40.00",
+                tax: "",
+                total: "4,800.00",
+              },
+            }
+      ),
     };
   },
 };

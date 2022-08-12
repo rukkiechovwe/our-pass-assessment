@@ -5,7 +5,6 @@ export default {
 
       if (res.status === 200) {
         let json = await res.json();
-        //   console.log(json);
         commit("updateInvoice", json);
       }
     } catch (error) {

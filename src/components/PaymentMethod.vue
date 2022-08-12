@@ -9,15 +9,21 @@
         <p class="text-weight-bold">Wire Transfer</p>
         <p>
           <span class="q-pr-sm text-grey">Account Name:</span>
-          <span class="text-weight-bold">{{invoice.payment.account_name}}</span>
+          <span class="text-weight-bold">{{
+            invoice.payment.account_name
+          }}</span>
         </p>
         <p>
           <span class="q-pr-sm text-grey">Account Number:</span>
-          <span class="text-weight-bold">{{invoice.payment.account_number}}</span>
+          <span class="text-weight-bold">{{
+            invoice.payment.account_number
+          }}</span>
         </p>
         <p>
           <span class="q-pr-sm text-grey">Routing Number:</span>
-          <span class="text-weight-bold">{{invoice.payment.routing_number}}</span>
+          <span class="text-weight-bold">{{
+            invoice.payment.routing_number
+          }}</span>
         </p>
       </div>
     </div>
@@ -52,7 +58,21 @@ export default {
     const store = useStore();
 
     return {
-      invoice: computed(() => store.state.invoice),
+      invoice: computed(() =>
+        store.state.invoice
+          ? store.state.invoice
+          : {
+              payment: {
+                account_name: "Barley Vallendito",
+                account_number: "9700 7867 7665 7686",
+                routing_number: "0123456789",
+              },
+              subTotal: "4,800.00",
+              discount: "0.00",
+              tax: "0.00",
+              total: "4,800.00",
+            }
+      ),
     };
   },
 };

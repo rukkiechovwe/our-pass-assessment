@@ -54,7 +54,30 @@ export default {
     const store = useStore();
 
     return {
-      invoice: computed(() => store.state.invoice),
+      invoice: computed(() =>
+        store.state.invoice
+          ? store.state.invoice
+          : {
+              name: "Dippa Inhouse",
+              email: "hello@dippainhouse.com",
+              invoice_number: "INV-2022-010",
+              issue_date: "11 Jan 2022",
+              due_date: "18 Jan 2022",
+              billed_to: {
+                name: "Zacky Grizzly",
+                address: "Moonlight Agency LTD",
+                state: "New York",
+                country: "USA",
+              },
+              address: {
+                street_name: "Ijen Bouelovard Street 101",
+                city: "Malang City",
+                state: "East Java",
+                country: "Indonesia",
+                postal_code: "65115",
+              },
+            }
+      ),
     };
   },
 };

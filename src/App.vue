@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-page-container v-if="invoice">
+    <q-page-container>
       <NavBar />
       <div class="q-px-lg q-py-lg text-weight-bold text-grey section">
         <span class="text-primary">Invoices / </span>
@@ -40,7 +40,11 @@ export default {
     store.dispatch("getInvoice");
 
     return {
-      invoice: computed(() => store.state.invoice),
+      invoice: computed(() =>
+        store.state.invoice
+          ? store.state.invoice
+          : { invoice_number: "INV-2022-010" }
+      ),
     };
   },
 };
